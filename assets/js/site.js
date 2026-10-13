@@ -70,6 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Tables retain native column layout; their outer frame handles scrolling.
+  if (main) {
+    main.querySelectorAll("table").forEach((table, index) => {
+      if (table.closest(".table-scroll")) return;
+      const wrapper = document.createElement("div");
+      wrapper.className = "table-scroll";
+      wrapper.tabIndex = 0;
+      wrapper.setAttribute("role", "region");
+      wrapper.setAttribute("aria-label", "表格 " + (index + 1) + "，可横向滚动");
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
+    });
+  }
+
   // 2. 代码窗口和复制按钮
   if (main) {
     main.querySelectorAll("pre").forEach(pre => {

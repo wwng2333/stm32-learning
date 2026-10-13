@@ -1,0 +1,18 @@
+title: "STM32 学习任务书"
+description: "STM32 嵌入式开发学习与实验任务"
+lang: zh-CN
+
+url: "https://stm32.wz.io"
+baseurl: ""
+
+theme: jekyll-theme-cayman
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: pretty
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

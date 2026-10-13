@@ -387,9 +387,10 @@ a:focus-visible,
 /* 表格、引用与图片 */
 
 .main-content table {
-  display: block;
+  display: table;
   width: 100%;
-  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
   border-radius: 12px;
   border: 1px solid var(--border);
 }
@@ -542,12 +543,13 @@ a:focus-visible,
 /* Article layout: warm paper, compact masthead and readable measure. */
 * { box-sizing: border-box; }
 body { margin: 0; }
-.page-header { max-width: 1080px; padding: 22px 32px !important; }
+.page-header { max-width: 960px; padding: 22px 32px !important; }
 .page-header .project-name { line-height: 1.4; }
 .main-content {
-  max-width: 880px;
+  width: calc(100% - 48px);
+  max-width: 960px;
   margin: 40px auto 72px;
-  padding: 48px 56px;
+  padding: 40px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -605,15 +607,23 @@ body { margin: 0; }
 .site-footer-owner { color: var(--foreground); }
 .home-page .main-content { background: transparent; border: 0; box-shadow: none; }
 @media (max-width: 920px) {
-  .main-content { margin: 28px 24px 48px; padding: 36px; }
+  .main-content { margin: 28px auto 48px; padding: 32px; }
 }
 @media (max-width: 650px) {
   .page-header { padding: 18px 20px !important; flex-wrap: wrap; }
   .page-header .project-name { font-size: 16px !important; }
   .site-actions { margin-left: auto; }
-  .main-content { margin: 20px 12px 36px; padding: 26px 20px; font-size: 15px; border-radius: 12px; }
+  .main-content { width: calc(100% - 24px); margin: 20px auto 36px; padding: 26px 20px; font-size: 15px; border-radius: 12px; }
   .main-content h1 { padding-right: 0; font-size: 26px; }
   .main-content h2 { font-size: 21px; margin-top: 34px; }
   .main-content .code-window pre { padding: 16px !important; }
   .home-page .main-content h1 { padding-right: 36px; }
 }
+
+/* Keep the table's grid full width; scroll its wrapper on narrow screens. */
+.table-scroll { width: 100%; overflow-x: auto; margin: 22px 0; border: 1px solid var(--border); border-radius: 12px; }
+.table-scroll:focus-visible { outline: 2px solid var(--link-wave); outline-offset: 3px; }
+.main-content .table-scroll table { display: table; width: 100%; margin: 0; border: 0; border-radius: 0; border-collapse: separate; border-spacing: 0; }
+.main-content table th, .main-content table td { border: 0; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+.main-content table tbody tr:last-child td { border-bottom: 0; }
+.main-content table th + th, .main-content table td + td { border-left: 1px solid var(--border); }

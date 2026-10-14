@@ -17,7 +17,7 @@
 
 - 任务 03：I²C 设备 ACK 检测
 - [任务 04：EEPROM 单字节读写](https://stm32.wz.io/tasks/04-eeprom/)
-- [任务 05：EEPROM 多字节读写与页边界处理](tasks/05-eeprom-multi-byte.md)
+- [任务 05：EEPROM 多字节读写与页边界处理](https://stm32.wz.io/tasks/05-eeprom-multi-byte)
 
 ## 后续学习
 

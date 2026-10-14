@@ -627,3 +627,58 @@ body { margin: 0; }
 .main-content table th, .main-content table td { border: 0; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
 .main-content table tbody tr:last-child td { border-bottom: 0; }
 .main-content table th + th, .main-content table td + td { border-left: 1px solid var(--border); }
+
+
+/* Card titles use color feedback, without an underline across the card. */
+.home-page .main-content > ul > li a,
+.home-page .main-content > ul > li a:hover,
+.home-page .main-content > ul > li a:focus,
+.home-page .main-content > ul > li a:active {
+  background-image: none;
+  text-decoration: none;
+}
+.home-page .main-content > ul > li a:focus-visible {
+  outline: 2px solid var(--link-wave);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+/* Task lists: one marker, a 12px text gap and aligned wrapped lines. */
+.main-content ul:has(> li input[type="checkbox"]) { padding-left: 0; }
+.main-content li:has(> input[type="checkbox"]),
+.main-content li:has(> p > input[type="checkbox"]),
+.main-content li.task-list-item {
+  position: relative;
+  list-style: none;
+  padding-left: 30px;
+  margin-top: 10px;
+  min-height: 1.85em;
+}
+.main-content li:has(> p > input[type="checkbox"]) > p { margin-bottom: 0; }
+.main-content li > input[type="checkbox"],
+.main-content li > p > input[type="checkbox"] {
+  appearance: none;
+  position: absolute;
+  left: 0;
+  top: .4em;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 1.5px solid var(--muted);
+  border-radius: 4px;
+  background-color: var(--secondary);
+  opacity: 1;
+  cursor: default;
+}
+.main-content li input[type="checkbox"]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='m4 9 3 3 7-7' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+:root[data-theme="dark"] .main-content li input[type="checkbox"]:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='m4 9 3 3 7-7' fill='none' stroke='%230c0a09' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+@media (forced-colors: active) {
+  .main-content li > input[type="checkbox"],
+  .main-content li > p > input[type="checkbox"] { appearance: auto; }
+}

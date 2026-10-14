@@ -237,7 +237,7 @@ a:focus-visible,
   border-color: var(--border-strong);
 }
 
-.home-page .main-content > ul > li a {
+:root .home-page .main-content > ul > li a {
   display: block;
   font-weight: 600;
 }
@@ -630,14 +630,14 @@ body { margin: 0; }
 
 
 /* Card titles use color feedback, without an underline across the card. */
-.home-page .main-content > ul > li a,
-.home-page .main-content > ul > li a:hover,
-.home-page .main-content > ul > li a:focus,
-.home-page .main-content > ul > li a:active {
+:root .home-page .main-content > ul > li a,
+:root .home-page .main-content > ul > li a:hover,
+:root .home-page .main-content > ul > li a:focus,
+:root .home-page .main-content > ul > li a:active {
   background-image: none;
   text-decoration: none;
 }
-.home-page .main-content > ul > li a:focus-visible {
+:root .home-page .main-content > ul > li a:focus-visible {
   outline: 2px solid var(--link-wave);
   outline-offset: 5px;
   border-radius: 4px;

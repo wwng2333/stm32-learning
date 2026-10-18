@@ -19,6 +19,11 @@
 - [任务 04：EEPROM 单字节读写](https://stm32.wz.io/tasks/04-eeprom/)
 - [任务 05：EEPROM 多字节读写与页边界处理](https://stm32.wz.io/tasks/05-eeprom-multi-byte)
 
+## 第二阶段：SPI 与 25Q64
+
+- [任务 06：SPI Flash 芯片识别](tasks/06-25q64/)
+
+
 ## 后续学习
 
 - GPIO 与外部中断

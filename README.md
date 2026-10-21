@@ -1,4 +1,3 @@
-
 # STM32 学习任务书
 
 本网站用于整理 STM32 学习过程中的实验任务、
@@ -22,6 +21,7 @@
 ## 第二阶段：SPI 与 25Q64
 
 - [任务 06：SPI Flash 芯片识别](tasks/06-25q64/)
+- [任务 07：SPI Flash 状态寄存器读取与写使能验证](tasks/07-25q64-status-register-write-enable/)
 
 
 ## 后续学习
